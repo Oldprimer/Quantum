@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Quantum.Data.Model.Note>
+@{
+    ViewData["Title"] = "Quantum";
+}
+<h1>Hello Quantum</h1>
+
+<form asp-controller="Home" asp-action="Action">
+    <input name="Header" type="text"/>
+    <input name="Content" type="text"/>
+    <button type="submit">Submit</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Note_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Header)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created)
+                </td>
+                <td>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-guid="@item.Note_Id">Edit order</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
