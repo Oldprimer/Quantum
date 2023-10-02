@@ -41,4 +41,4 @@ dotnet-ef database update --project Quantim.Data --context PostgreSqlContext
 
 Scema
 
-![Scema](../../assets/img/scema.png)
+![Scema](../../assets/img/Scema.png)
