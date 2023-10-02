@@ -11,7 +11,7 @@ Use `NuGet` package manager to install these dependecies:
 
 ### Connection string
 
-Set your connection string at ["PostgreSqlContextFactory"](https://github.com/Oldprimer/Quantum/blob/main/src/Quantum.Data/Context/PostgreSqlContext.cs)
+Set your connection string at ["PostgreSqlContextFactory"](https://github.com/Oldprimer/Quantum/blob/main/src/Quantum.Data/Context/PostgreSqlContextFactory.cs)
 
 ```csharp
 public class PostgreSqlContextFactory : IDesignTimeDbContextFactory<PostgreSqlContext>
