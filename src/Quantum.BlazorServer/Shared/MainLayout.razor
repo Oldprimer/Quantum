@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.SignalR.Client
+@inherits LayoutComponentBase
+<PageTitle>Quantum.BlazorServer</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <EditForm Model="@Model">
+                            <div class="input-group">
+                                <InputText @bind-Value = "Model"  class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="search-button" />
+                                <div class="input-group-append">
+                                    <NavLink class="btn btn-primary" href="@($"/Filter/{Model}")">
+                                        <span>Search</span>
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </EditForm>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    public string Model { get; set; } = string.Empty;
+}
