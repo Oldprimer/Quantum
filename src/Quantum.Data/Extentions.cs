@@ -12,7 +12,8 @@ namespace Quantum.Data
     {
         public static IServiceCollection AddData(this IServiceCollection serviceDescriptors)
         {
-            serviceDescriptors.AddScoped<IRepository<Note>, NoteRepository>();
+            serviceDescriptors.AddScoped<NoteRepository>();
+            serviceDescriptors.AddScoped<IRepository<Note>, CachedNoteRepository>();
             serviceDescriptors.AddScoped<INoteService, NoteService>();
             return serviceDescriptors;
         }
